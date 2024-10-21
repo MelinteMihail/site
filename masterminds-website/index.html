@@ -27,16 +27,16 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="script.js" defer></script>
     </head>
     
-    <body onload="document.body.classList.add('loaded')">
-        <script> AOS.init(); </script>
+    <body>
         <section id="preload">
             <span></span>
         </section>
         <section id="afterload">
             <section id="rightnav">
-                <div class="btn" onclick="rightnav_click()">
+                <div class="btn rightnav_btn">
                     <i class="l1"></i>
                     <i class="l2"></i>
                     <i class="l1"></i>
@@ -51,26 +51,26 @@
                         <div class="front">
                            <h1>MasterMinds</h1>
                            <ul>
-                               <li><a href="#home" onclick="rightnav_close()">Home</a></li>
-                               <li><a href="#teams" onclick="rightnav_close()">Teams</a></li>
-                               <li><a href="#notebook" onclick="rightnav_close()">Notebook</a></li>
-                               <li><a href="#values" onclick="rightnav_close()">Values</a></li>
-                               <li><a href="#contact" onclick="rightnav_close()">Contact</a></li>
+                               <li class="menu_nav_item"><a href="#home">Home</a></li>
+                               <li class="menu_nav_item"><a href="#teams">Teams</a></li>
+                               <li class="menu_nav_item"><a href="#notebook">Notebook</a></li>
+                               <li class="menu_nav_item"><a href="#values">Values</a></li>
+                               <li class="menu_nav_item"><a href="#contact">Contact</a></li>
                            </ul>
                            <div class="bot">
                                <span>Social:</span>
                                <ul>
-                                   <li><a href="https://www.instagram.com/masterminds_011/" class="ig" onclick="rightnav_close()"></a></li>
-                                   <li><a href="https://www.facebook.com/mastermindscncv/" class="fb" onclick="rightnav_close()"></a></li>
-                                   <li><a href="https://mobile.twitter.com/MasterM36539990" class="tw" onclick="rightnav_close()"></a></li>
-                                   <li><a href="https://www.youtube.com/channel/UC0EgKYi1392yR4hKV_6gzsw" class="yt" onclick="rightnav_close()"></a></li>
+                                   <li class="menu_social_item"><a href="https://www.instagram.com/masterminds_011/" class="ig"></a></li>
+                                   <li class="menu_social_item"><a href="https://www.facebook.com/mastermindscncv/" class="fb"></a></li>
+                                   <li class="menu_social_item"><a href="https://mobile.twitter.com/MasterM36539990" class="tw"></a></li>
+                                   <li class="menu_social_item"><a href="https://www.youtube.com/channel/UC0EgKYi1392yR4hKV_6gzsw" class="yt"></a></li>
                                </ul>
                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <script>
+            <!-- <script>
                 var rightnav = document.getElementById('rightnav');
                 var rightmenu = document.getElementById('rightmenu');
 
@@ -87,11 +87,11 @@
                     rightnav.classList.remove('viz');
                     rightmenu.classList.remove('viz');
                 }
-            </script>
+            </script> -->
             <section id="artinfo">
                     <div class="menu">
                     <div class="shadow">
-                        <div class="closebtn" onclick="artinfo_close()"></div>
+                        <div class="closebtn artinfo_closebtn"></div>
                     </div>
                     <div class="content">
                         <span></span>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
             </section>
-            <script>
+            <!-- <script>
                 var artinfo = document.getElementById('artinfo');
                 var arts = artinfo.getElementsByTagName('article');
 
@@ -129,7 +129,7 @@
                     for(var i = 0; i < arts.length; ++i)
                         arts[i].classList.remove('viz');
                 }
-            </script>
+            </script> -->
             <section id="home">
                 <nav>
                     <div class="container">
@@ -161,7 +161,7 @@
                     <div class="back"></div>
                     <div class="main">
                         <h1>We are MasterMinds and we love robots. Relatable?</h1>
-                        <a href="#" onclick="artinfo_open(1)">Our story</a>
+                        <a href="#" class="artinfo_btn">Our story</a>
                     </div>
                 </div>
             </section>
@@ -170,21 +170,21 @@
                     <div class="content">
                         <h1>MasterMinds 2019</h1>
                         <p>This is last season's team. They shaped the future of<br>MasterMinds. Let's meet them!</p>
-                        <a href="#" onclick="event.preventDefault(); artinfo_open(2)">More Info</a>
+                        <a href="#" class="artinfo_btn">More Info</a>
                     </div>
                 </div>
                 <div class="item i20" data-aos="fade-up">
                     <div class="content">
                         <h1>MasterMinds 2020</h1>
                         <p>Here we are, making it possible! This is MasterMinds!<br>Let's get to know each other.</p>
-                        <a href="#" onclick="event.preventDefault(); artinfo_open(3)">More Info</a>
+                        <a href="#" class="artinfo_btn">More Info</a>
                     </div>
                 </div>
                 <div class="item i21" data-aos="fade-left">
                     <div class="content">
                         <h1>MasterMinds' Future</h1>
                         <p>We're already thinking about the future. We are planning<br>in advance our team structure and much more!</p>
-                        <a href="#" onclick="event.preventDefault(); artinfo_open(4)">More Info</a>
+                        <a href="#" class="artinfo_btn">More Info</a>
                     </div>
                 </div>
             </section>
@@ -335,7 +335,7 @@
                     </ul>
                 </div>
             </section>
-            <script>
+            <!-- <script>
                 var numbers_ul = document.getElementById('numbers').getElementsByTagName('ul')[0];
                 var numbers_lis = numbers_ul.getElementsByTagName('li');
 
@@ -366,14 +366,14 @@
                     if(count_i <= count_total)
                         setTimeout(start_count, count_step);
                 }
-            </script>
+            </script> -->
             <section id="contact">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1424.1997884942782!2d26.111752002792908!3d44.4454771959892!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd4bef7cfd028f09!2sCantemir+Vod%C4%83+National+College!5e0!3m2!1sen!2sro!4v1538828123689" style="border:0" allowfullscreen="" width="100%" height="590" frameborder="0"></iframe>
                 <div class="details" data-aos="fade-up">
                     <h1>The school</h1>
                     <ul>
                         <li>School: <a href="https://www.cncv.ro/">NC "Cantemir-Vodă"</a></li>
-                        <li>Address: <a href="https://goo.gl/maps/c8imxB91RfL2">Right Here!</a></li>
+                        <li>Address: <a href="https://goo.gl/maps/c8imxB91RfL2" target="_blank" rel="noreferrer noopener">Right Here!</a></li>
                         <li>Email: <a href="mailto:lcantemirvoda@yahoo.com">lcantemirvoda@yahoo.com</a></li>
                     </ul>
                     <h1>The team</h1>
