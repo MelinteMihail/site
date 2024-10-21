@@ -1,10 +1,20 @@
 // Initiliaze AOS Library
 AOS.init();
 
-// Start Script tag 1
-
+// declare and initialize all variables
 const rightnav = document.getElementById('rightnav');
 const rightmenu = document.getElementById('rightmenu');
+const artinfo = document.getElementById('artinfo');
+const arts = artinfo.getElementsByTagName('article');
+const numbers_ul = document.getElementById('numbers').getElementsByTagName('ul')[0];
+const numbers_lis = numbers_ul.getElementsByTagName('li');
+const rightNavBtn = document.querySelector(".rightnav_btn");
+const menuNavItems = document.querySelectorAll(".menu_nav_item");
+const menuSocialItems = document.querySelectorAll(".menu_social_item");
+const artinfoCloseBtn = document.querySelector(".artinfo_closebtn");
+const artinfoBtns = document.querySelectorAll(".artinfo_btn");
+
+// declare all the functions
 
 function rightnav_click() {
     if(rightnav.classList.contains('viz')) {
@@ -20,16 +30,7 @@ function rightnav_close() {
     rightmenu.classList.remove('viz');
 }
 
-// End Script tag 1
 
-
-
-
-
-// Start Script tag 2
-
-const artinfo = document.getElementById('artinfo');
-const arts = artinfo.getElementsByTagName('article');
 
 function artinfo_open(i) {
     artinfo.classList.add('viz');
@@ -40,17 +41,6 @@ function artinfo_close() {
     for(var i = 0; i < arts.length; ++i)
         arts[i].classList.remove('viz');
 }
-
-// End Script tag 2
-
-
-
-
-// Start Script tag 3
-
-const numbers_ul = document.getElementById('numbers').getElementsByTagName('ul')[0];
-const numbers_lis = numbers_ul.getElementsByTagName('li');
-
 
 function checkVisible(elm) {
     const rect = elm.getBoundingClientRect();
@@ -80,9 +70,6 @@ function start_count() {
         setTimeout(start_count, count_step);
 }
 
-
-// End Script Tag 3
-
 // Add event listeners
 
 // change from onload="document.body.classList.add('loaded')"
@@ -91,31 +78,26 @@ window.addEventListener("load", () => {
 });
 
 //change from onclick="rightnav_click()"
-const rightNavBtn = document.querySelector(".rightnav_btn");
 
 rightNavBtn.addEventListener("click", rightnav_click);
 
 //change from onclick="rightnav_close()"
-const menuNavItems = document.querySelectorAll(".menu_nav_item");
 
 for(let i = 0; i < menuNavItems.length; i++) {
     menuNavItems[i].addEventListener("click", rightnav_close);
 }
 
 //change from onclick="rightnav_close()"
-const menuSocialItems = document.querySelectorAll(".menu_social_item");
 
 for(let i = 0; i < menuSocialItems.length; i++) {
     menuSocialItems[i].addEventListener("click", rightnav_close);
 }
 
 //change from onclick="artinfo_close()"
-const artinfoCloseBtn = document.querySelector(".artinfo_closebtn");
 
 artinfoCloseBtn.addEventListener("click", artinfo_close);
 
 //change all event.preventDefault and onclick="artinfo_open(i)" instances
-const artinfoBtns = document.querySelectorAll(".artinfo_btn");
 
 for(let i = 0; i < artinfoBtns.length; i++) {
     artinfoBtns[i].addEventListener("click", (e) => {
