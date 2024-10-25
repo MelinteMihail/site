@@ -12,6 +12,33 @@ body {
     overflow-x: hidden;
 }
 
+html::-webkit-scrollbar, 
+#teams::-webkit-scrollbar {
+    width: 10px;
+}
+
+#teams::-webkit-scrollbar {
+    height: 10px;
+}
+
+html::-webkit-scrollbar-thumb,
+#teams::-webkit-scrollbar-thumb {
+    background: #d3d3d3;
+    border-radius: 5px;
+}
+
+html::-webkit-scrollbar-track-piece,
+#teams::-webkit-scrollbar-track-piece {
+    background-color: #101112;
+}
+
+@-moz-document url-prefix() {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: #d3d3d3 #101112;
+    }
+}
+
 #preload {
     width: 100%;
     height: 100%;
@@ -777,15 +804,16 @@ body {
     width: 100%;
     height: 380px;
     display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
+
 #teams .item {
-    width: 33.3333%;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
 }
 
 #teams .item.i19 {
