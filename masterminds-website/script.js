@@ -13,6 +13,7 @@ const menuNavItems = document.querySelectorAll(".menu_nav_item");
 const menuSocialItems = document.querySelectorAll(".menu_social_item");
 const artinfoCloseBtn = document.querySelector(".artinfo_closebtn");
 const artinfoBtns = document.querySelectorAll(".artinfo_btn");
+const articles = document.querySelectorAll(".item");
 
 // declare all the functions
 
@@ -104,4 +105,16 @@ for(let i = 0; i < artinfoBtns.length; i++) {
         e.preventDefault();
         artinfo_open(i + 1);
     });
+}
+
+// check how many articles there are(e.g "Masterminds 2020")
+// and calculate flex-basis based on that
+const numberOfArticles = articles.length;
+
+for(let i = 0; i < articles.length; i++) {
+    if(numberOfArticles > 3) {
+        articles[i].style.flex = `0 0 33.33%`;
+    } else {
+        articles[i].style.flex = `0 0 ${100 / numberOfArticles}%`;
+    }
 }
