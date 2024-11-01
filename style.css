@@ -558,9 +558,9 @@ source {
 
 #home nav .container .left i {
     display: block;
-    width: 30px;
-    height: 30px;
-    background-image: url('images/logo.png');
+    width: 40px;
+    height: 40px;
+    background-image: url('images/logo-removebg-preview.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -830,7 +830,7 @@ source {
 }
 
 #teams .item.i21 {
-    background-image: url('images/logo.png');
+    background-image: url('images/logo-removebg-preview.png');
     background-size: 300px;
 }
 
