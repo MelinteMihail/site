@@ -14,8 +14,25 @@ const menuSocialItems = document.querySelectorAll(".menu_social_item");
 const artinfoCloseBtn = document.querySelector(".artinfo_closebtn");
 const artinfoBtns = document.querySelectorAll(".artinfo_btn");
 const articles = document.querySelectorAll(".item");
+const blogPosts = document.querySelectorAll(".blog-post");
 
 // declare all the functions
+
+// cine preia control site-ului imi cer scuze, nu stiu altfel pwpici <3
+for(let i = 0; i < blogPosts.length; i++) {
+    blogPosts[i].addEventListener("mouseenter", () => {
+        for(let j = 0; j < blogPosts.length; j++) {
+            if(j == i) continue;
+            else blogPosts[j].classList.add("darken");
+        }
+    });
+
+    blogPosts[i].addEventListener("mouseleave", () => {
+        for(let j = 0; j < blogPosts.length; j++) {
+            blogPosts[j].classList.remove("darken");
+        }
+    });
+}
 
 function rightnav_click() {
     if(rightnav.classList.contains('viz')) {

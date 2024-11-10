@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
@@ -560,7 +562,7 @@ source {
     display: block;
     width: 40px;
     height: 40px;
-    background-image: url('images/logo-removebg-preview.png');
+    background-image: url('images/cncv_purple.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -942,133 +944,154 @@ source {
     background-color: #222;
 }
 
-#notebook {
-    width: 100%;
-    padding: 90px 0 100px 0;
-}
-
-#notebook .container {
-    max-width: 1200px;
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    box-sizing: border-box;
+.blog {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
 }
 
-#notebook .container h1 {
+.blog .title h1 {
+    font-family: "Poppins";
     color: #fff;
-    font-size: 48px;
-    font-weight: 600;
-    margin: 0 0 40px 0;
-    text-transform: uppercase;
-    font-family: 'Oswald',sans-serif;
-    text-align: center;
+    font-size: calc(100% + 1rem);
 }
 
-#notebook .container ul {
-    height: 26px;
-    margin: 0 0 40px 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.all-blogs {
+    margin-top: 5rem;
+    padding-bottom: 2rem;
 }
 
-#notebook .container ul li {
-    margin-left: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: oswald,sans-serif;
-    color: #fff;
-    text-transform: uppercase;
+.all-blogs .all-blogs-btn {
+    padding: 1.25rem;
+    width: 250px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 3px;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: #350270;
+    color: #fff;
 }
 
-#notebook .container ul li:before {
+.all-blogs .all-blogs-btn .text {
+    transition: transform 0.4s ease;
+    font-size: clamp(1rem, 1.3rem, 1.55rem);
+}
+
+.all-blogs .all-blogs-btn .icon {
     position: absolute;
-    bottom: -5px;
-    width: 0%;
-    height: 3px;
-    background-color: #e6e6e6;
-    content: '';
-    transition: width .25s cubic-bezier(.5,-.5,.5,1.5);
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease, visibility 0.4s ease, left 0.4s ease;
+    visibility: hidden;
 }
 
-#notebook .container ul li:hover:before {
+.all-blogs .all-blogs-btn:hover .text {
+    transform: translateX(150%);
+}
+
+.all-blogs .all-blogs-btn:hover .icon {
+    visibility: visible;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.blog-posts {
     width: 100%;
-}
-
-#notebook .container ul li:nth-child(1) {
-    margin-left: 0;
-}
-
-#notebook .container ul li.selected {
-    color: #ba7dff;
-}
-
-#notebook .container ul li.selected:before {
-    background-color: #ba7dff;
-    width: 100%;
-}
-
-#notebook .container table {
-    font-family: 'nunito sans',sans-serif;
-    width: 100%;
-    border: 1px solid #1f1f1f;
-    background-color: #212121;
-    text-align: center;
-    border-collapse: collapse;
-}
-
-#notebook .container table thead tr th {
-    font-size: 16px;
     color: #fff;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-family: 'Oswald',sans-serif;
-    padding: 25px 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
-#notebook .container table tbody {
-    border-top: 1px solid #171717;
+.blog-post {
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 40px;
+    filter: brightness(1);
+    transition: transform 0.3s, filter 0.3s;
+    will-change: transform, filter;
+    min-height: 100%;
+    transform-origin: center;
+    backface-visibility: hidden;
 }
 
-#notebook .container table tbody tr td {
+.blog-post > h1 {
+    width: 100%;
     text-align: center;
-    border-right: 1px solid #171717;
-    border-bottom: 1px solid #171717;
-    width: 146px;
-    padding: 26px 10px 28px;
-    position: relative;
-    z-index: 1;
+    border-bottom: 1px solid blue;
+    margin-bottom: 25px;
+    font-family: "Poppins";
+}
+
+.blog-post > p {
+    font-size: clamp(0.125rem, 1.4rem, 2rem); 
+    line-height: 1.3;
+}
+
+.blog-post .blog-btn {
+    border-radius: 3px;
+    border: none;
+    background-color: #350270;
     color: #fff;
-    font-size: 20px;
-    transition: all 0.2s ease-in-out;
+    font-size: 1.15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.blog-post .blog-btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.blog-post:hover {
+    transform: scale(1.12) translateZ(0);
+    filter: brightness(1);
+}
+
+.darken {
+    filter: brightness(0.5) blur(0.25rem);
+}
+
+
+.blog-btn {
+    transition: color 0.25s ease, background-color 0.25s ease;
+}
+
+.blog-btn a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.blog-btn a > svg {
+    margin-left: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog-btn:hover {
     cursor: pointer;
-}
-
-#notebook .container table tbody tr td.d {
-    cursor: default;
-    color: #888;
-}
-
-#notebook .container table tbody tr td:hover {
-    background-color: #5e3f81;
-}
-
-#notebook .container table tbody tr td.d:hover {
-    background-color: inherit;
+    background-color: black;
+    color: #fff;
 }
 
 #values {
