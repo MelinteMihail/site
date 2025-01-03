@@ -499,23 +499,37 @@ source {
 }
 
 #artinfo .menu .content article .team {
+    font-family: "Poppins";
     width: 100%;
     padding-left: 100px;
-    max-width: 900px;
+    /* max-width: 900px; */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    
     flex-wrap: wrap;
     list-style: none;
 
 }
 
 #artinfo .menu .content article .team li {
-    width: 48%;
-    height: 50px;
-    background-color: red;
+    max-width: 30ch;
+    text-wrap: pretty;
+    /* background-color: red; */
     margin-bottom: 24px;
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1.5;
+}
+
+#artinfo .menu .content article .team img {
+    width: 50%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.gigel123 {
+    align-self: flex-start !important;
 }
 
 #home {
@@ -731,6 +745,7 @@ source {
 }
 
 #home .content  .videocontainer .video {
+    /* background-color: rgba(102 51 153 / 0.9) */
     min-width: 100%;
     min-height: 100%;
 }
@@ -740,7 +755,7 @@ source {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(64 10 118 / .6);
     top: 0;
     left: 0;
 }
@@ -834,6 +849,11 @@ source {
 #teams .item.i21 {
     background-image: url('images/logo-removebg-preview.png');
     background-size: 300px;
+}
+
+#teams .item.i22 {
+    background-image: url("images/logo_1-removebg-preview-Photoroom.png");
+    background-size: 50%;
 }
 
 #teams .item .content {
@@ -1451,4 +1471,63 @@ footer .bot p {
 footer .bot p a {
     color: #ba7dff;
     text-decoration: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container .mid,
+    .container .right {
+        display: none !important;
+    }
+
+    #rightnav {
+        top: 0;
+    }
+
+    #home nav {
+        padding-left: 0;
+    }
+
+    #home .content .main h1 {
+        font-size: 32px;
+    }
+
+    .blog-posts {
+        grid-template-columns: repeat(2, 2fr);
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .container .mid,
+    .container .right {
+        display: none !important;
+    }
+
+    #rightnav {
+        top: 0;
+    }
+
+    #home nav {
+        padding-left: 0;
+    }
+
+    #home .content .main h1 {
+        font-size: 32px;
+    }
+
+    .blog-posts {
+        grid-template-columns: repeat(2, 2fr);
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
 }
