@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
+
 body {
-    box-sizing: border-box;
     background-color: #111213;
-    margin: 0;
-    padding: 0;
     border: none;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 html::-webkit-scrollbar, 
@@ -738,14 +742,13 @@ source {
     min-height: 100%;
     max-width: 100%;
     max-height: 100%;
-    z-index: -2;
+    z-index: 1;
     top: 0;
     left: 0;
     overflow: hidden;
 }
 
 #home .content  .videocontainer .video {
-    /* background-color: rgba(102 51 153 / 0.9) */
     min-width: 100%;
     min-height: 100%;
 }
@@ -755,10 +758,16 @@ source {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: rgba(64 10 118 / .6);
+    background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url(images/main_bg2.jpg); /* The gradient adds a layer on top of the background, so it creates a "dimming" effect */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     top: 0;
     left: 0;
 }
+
 
 #home .content .main {
     width: 100%;
@@ -1031,6 +1040,8 @@ source {
     align-items: center;
     gap: 1.5rem;
     padding: 1rem;
+    font-family: "Poppins", sans-serif;
+
 }
 
 .blog-post {
@@ -1039,10 +1050,10 @@ source {
     flex-direction: column;
     align-items: center;
     padding: 10px 40px;
+    min-height: 100%;
     filter: brightness(1);
     transition: transform 0.3s, filter 0.3s;
     will-change: transform, filter;
-    min-height: 100%;
     transform-origin: center;
     backface-visibility: hidden;
 }
@@ -1312,23 +1323,32 @@ source {
 #contact .details {
     width: 420px;
     padding: 40px;
-    height: 420px;
+    height: max-content;
     background: #fff;
     position: absolute;
     right: 120px;
-    top: 80px;
+    top: 8px;
     box-sizing: border-box;
     box-shadow: 6px 6px 50px rgba(198,198,198,.5);
     border: solid 1px #bbb;
 }
 
-#contact .details h1 {
+#contact .details h1,
+#contact .details h2 {
     margin: 0;
     line-height: 1;
     color: #000;
     text-transform: uppercase;
     font-family: 'Oswald',sans-serif;
     font-size: 22px;
+}
+
+#contact .details h1:nth-of-type(1) {
+    margin-top: 0.5rem;
+}
+
+#contact .details h2:nth-of-type(1) {
+    margin-top: 0.5rem;
 }
 
 #contact .details ul {
@@ -1474,7 +1494,10 @@ footer .bot p a {
 }
 
 
+
+/* Small-sized phones */
 @media only screen and (max-width: 600px) {
+    
     .container .mid,
     .container .right {
         display: none !important;
@@ -1493,10 +1516,48 @@ footer .bot p a {
     }
 
     .blog-posts {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
     }
+
+    #home .content .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url(images/main_bg2.jpg); /* The gradient adds a layer on top of the background, so it creates a "dimming" effect */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
 }
 
+    footer .top .end {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    footer .top .end .logos {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .top .end .social li,
+    footer .top .end .social li a {
+        display: block;
+        width: 64px;
+        height: 64px;
+        background-size: 64px;
+    }
+    
+}
+/* Medium-sized phones */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
     .container .mid,
     .container .right {
@@ -1516,8 +1577,11 @@ footer .bot p a {
     }
 
     .blog-posts {
-        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        
     }
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
