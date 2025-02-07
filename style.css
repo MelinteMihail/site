@@ -1497,6 +1497,9 @@ footer .bot p a {
 
 /* Small-sized phones */
 @media only screen and (max-width: 600px) {
+    #artinfo .menu {
+        width: 100%;
+    }
     
     .container .mid,
     .container .right {
