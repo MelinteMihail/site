@@ -130,7 +130,7 @@ source {
     right: 0;
     top: calc(50% - 30px);
     background-color: rgba(0,0,0,0.5);
-    transition: background-color 0.2s ease-in-out, transform 0.5s ease 1s;
+    transition: background-color 0.2s ease-in-out, transform 0.5s ease 1s, opacity 0.3s ease 0.5s, visibility 0.3s ease 0.5s;
     width: 64px;
     transform: translateX(72px);
 }
@@ -1508,7 +1508,7 @@ footer .bot p a {
     }
 
     #home nav {
-        padding-left: 0;
+        padding: 0;
     }
 
     #home .content .main h1 {
@@ -1976,7 +1976,7 @@ footer .bot p a {
 }
 
 /* Larger tablets and laptops */
-@media only screen and (min-width: 769px) and (max-width: 1200px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 
     #home .content .main h1 {
         font-size: 32px;
@@ -2009,7 +2009,7 @@ footer .bot p a {
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1200px) and (max-width: 1399px)  {
     .blog-posts {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
