@@ -53,14 +53,14 @@ function rightnav_close() {
 function artinfo_open(i) {
     artinfo.classList.add('viz');
     artinfo.getElementsByClassName('a' + i)[0].classList.add('viz');
-    rightnav.style.visibility = "0";
+    rightnav.style.display = "none";
     rightnav.style.opacity = "0";
 }
 function artinfo_close() {
     artinfo.classList.remove('viz');
     for(var i = 0; i < arts.length; ++i)
         arts[i].classList.remove('viz');
-    rightnav.style.visibility = "1";
+    rightnav.style.display = "block";
     rightnav.style.opacity = "1";
 }
 

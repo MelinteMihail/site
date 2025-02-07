@@ -130,7 +130,8 @@ source {
     right: 0;
     top: calc(50% - 30px);
     background-color: rgba(0,0,0,0.5);
-    transition: background-color 0.2s ease-in-out, transform 0.5s ease 1s, opacity 0.3s ease 0.5s, visibility 0.3s ease 0.5s;
+    transition: background-color 0.2s ease-in-out, transform 0.5s ease 1s, display 0.5s ease, opacity 0.5s ease;
+    transition-behavior: allow-discrete;
     width: 64px;
     transform: translateX(72px);
 }
@@ -526,7 +527,6 @@ source {
 #artinfo .menu .content article .team li {
     max-width: 30ch;
     text-wrap: pretty;
-    /* background-color: red; */
     margin-bottom: 24px;
     color: #fff;
     font-size: 1.75rem;
@@ -1501,6 +1501,30 @@ footer .bot p a {
         width: 100%;
     }
     
+    #artinfo .menu .content article {
+        padding: 0;
+        padding-top: 80px;
+        padding-left: 25px;
+    }
+    
+    #artinfo.viz .menu .content > span {
+        width: 50px;
+    }
+
+    #artinfo .menu .content article h1 {
+        font-size: 24px;
+    }
+
+    #artinfo .menu .content article .team {
+        padding-left: 50px;
+    }
+
+    #artinfo .menu .content article .team li {
+        font-size: 1.25rem;
+        margin-right: 15px;
+    }
+    
+    
     .container .mid,
     .container .right {
         display: none !important;
@@ -1903,27 +1927,6 @@ footer .bot p a {
     
     
 
-    /* footer .top .end {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    footer .top .end .logos {
-        display: flex;
-        justify-content: center;
-    }
-
-    footer .top .end .social li,
-    footer .top .end .social li a {
-        display: block;
-        width: 64px;
-        height: 64px;
-        background-size: 64px;
-    } */
-
     footer .top .end .logos {
         margin-left: 50px;
     }
@@ -1940,7 +1943,7 @@ footer .bot p a {
 
     #values .front .container ul {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         justify-items: center;
     }
@@ -1975,6 +1978,7 @@ footer .bot p a {
         width: 100%;
         height: 100%;
     }
+    
 
 }
 
