@@ -1976,7 +1976,7 @@ footer .bot p a {
 }
 
 /* Larger tablets and laptops */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1200px) {
 
     #home .content .main h1 {
         font-size: 32px;
@@ -2005,10 +2005,10 @@ footer .bot p a {
 
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
+/* @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
 }
 
 @media only screen and (min-width: 1200px) {
 
-}
+} */
