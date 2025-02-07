@@ -19,7 +19,8 @@ body {
 }
 
 html::-webkit-scrollbar, 
-#teams::-webkit-scrollbar {
+#teams::-webkit-scrollbar,
+*::-webkit-scrollbar {
     width: 10px;
 }
 
@@ -28,15 +29,18 @@ html::-webkit-scrollbar,
 }
 
 html::-webkit-scrollbar-thumb,
-#teams::-webkit-scrollbar-thumb {
+#teams::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
     background: #d3d3d3;
     border-radius: 5px;
 }
 
 html::-webkit-scrollbar-track-piece,
-#teams::-webkit-scrollbar-track-piece {
+#teams::-webkit-scrollbar-track-piece,
+*::-webkit-scrollbar-track-piece {
     background-color: #101112;
 }
+
 
 @-moz-document url-prefix() {
     * {
@@ -196,6 +200,8 @@ source {
 }
 
 #rightmenu {
+    width: 100%;
+    height: 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -209,6 +215,7 @@ source {
 }
 
 #rightmenu.viz {
+    height: 100%;
     opacity: 1;
     visibility: visible;
     transition: all 0.3s ease-in-out;
@@ -736,23 +743,6 @@ source {
     overflow: hidden;
 }
 
-#home .content .videocontainer {
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-#home .content  .videocontainer .video {
-    min-width: 100%;
-    min-height: 100%;
-}
-
 #home .content .back {
     position: absolute;
     width: 100%;
@@ -977,6 +967,7 @@ source {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-block: 2rem;
 }
 
 .blog .title h1 {
@@ -1082,6 +1073,7 @@ source {
     align-items: center;
     gap: 1rem;
     padding: 0.5rem;
+    margin-top: 0.55rem;
 }
 
 .blog-post .blog-btn a {
@@ -1260,7 +1252,7 @@ source {
     background: #161616;
     top: 0;
     bottom: 0;
-    width: 33%;
+    width: 34.4%;
     z-index: 1;
 }
 
@@ -1285,9 +1277,10 @@ source {
 #numbers .container ul li {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: 25%;
+    min-height: 120px;
 }
 
 #numbers .container ul li b {
@@ -1298,10 +1291,13 @@ source {
     font-size: 28px;
     letter-spacing: 2px;
     line-height: 1;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #numbers .container ul li span {
-    display: block;
     text-align: center;
     width: 100%;
     line-height: 1.2;
@@ -1312,12 +1308,16 @@ source {
     border-left: solid 1px rgba(255,255,255,0.2);
     border-right: solid 1px rgba(255,255,255,0.2);
     letter-spacing: 1px;
+    min-height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 0.2rem;
 }
 
 #contact {
     height: 590px;
     position: relative;
-    background-color: #888;
 }
 
 #contact .details {
@@ -1329,7 +1329,7 @@ source {
     right: 120px;
     top: 8px;
     box-sizing: border-box;
-    box-shadow: 6px 6px 50px rgba(198,198,198,.5);
+    /* box-shadow: 6px 6px 50px rgba(198,198,198,.5); */
     border: solid 1px #bbb;
 }
 
@@ -1520,20 +1520,149 @@ footer .bot p a {
         grid-template-columns: 1fr;
     }
 
-    #home .content .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: 
-                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url(images/main_bg2.jpg); /* The gradient adds a layer on top of the background, so it creates a "dimming" effect */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    top: 0;
-    left: 0;
-}
+
+    #rightmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background: rgba(36, 36, 36, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out 0.8s;
+    }
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        bottom: 50%;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+        transition: height 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.3s ease-in-out 0.2s;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+    
+    
 
     footer .top .end {
         display: flex;
@@ -1551,14 +1680,60 @@ footer .bot p a {
     footer .top .end .social li,
     footer .top .end .social li a {
         display: block;
-        width: 64px;
-        height: 64px;
-        background-size: 64px;
+        width: 80px;
+        height: 80px;
+        background-size: 80px;
+    }
+
+    #teams {
+        flex-direction: column;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    #values .front .container ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    #values .front .container ul li {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0;
+    }
+
+    #values .front .container ul li .top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #values .front .container ul li .top span {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #values .front .container ul li p {
+        text-align: center;
     }
     
+    #numbers:before {
+        width: 25%
+    }
+
+
+    #contact,
+    #contact .details {
+        position: static;
+        width: 100%;
+        height: 100%;
+    }
+
 }
-/* Medium-sized phones */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+/* Medium-sized phones and tablets*/
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+        
     .container .mid,
     .container .right {
         display: none !important;
@@ -1579,12 +1754,254 @@ footer .bot p a {
     .blog-posts {
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 1fr;
-        
+    }
+
+
+    #rightmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background: rgba(36, 36, 36, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out 0.8s;
+    }
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        bottom: 50%;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+        transition: height 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.3s ease-in-out 0.2s;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.6s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+    
+    
+
+    /* footer .top .end {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    footer .top .end .logos {
+        display: flex;
+        justify-content: center;
+    }
+
+    footer .top .end .social li,
+    footer .top .end .social li a {
+        display: block;
+        width: 64px;
+        height: 64px;
+        background-size: 64px;
+    } */
+
+    footer .top .end .logos {
+        margin-left: 50px;
+    }
+    
+    footer .top .end .social {
+        margin-right: 50px;
+    }
+
+    #teams {
+        flex-direction: column;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    #values .front .container ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    #values .front .container ul li {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 0;
+    }
+
+    #values .front .container ul li .top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #values .front .container ul li .top span {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    #values .front .container ul li p {
+        text-align: center;
+    }
+    
+    #numbers:before {
+        width: 25%
+    }
+
+    #contact,
+    #contact .details {
+        position: static;
+        width: 100%;
+        height: 100%;
     }
 
 }
 
-@media only screen and (min-width: 768px) and (max-width: 992px) {
+/* Larger tablets and laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+    #home .content .main h1 {
+        font-size: 32px;
+    }
+
+    .blog-posts {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer .top .end {
+        margin-inline: 100px;
+    }
+
+    #teams {
+        overflow-x: auto;
+    }
+    
+    #numbers:before {
+        width: 25%
+    }
+
+    #contact .details {
+        right: 10px;
+    }
 
 }
 
