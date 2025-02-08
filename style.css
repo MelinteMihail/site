@@ -310,9 +310,9 @@ source {
 #rightmenu .menu .content .bot {
     width: 100%;
     padding: 10px 0 11px 100px;
-    position: absolute;
+    position: fixed;
     background-color: #101010;
-    bottom: 60px;
+    bottom: 50%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
