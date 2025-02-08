@@ -1623,12 +1623,14 @@ footer .bot p a {
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease-in-out 0.8s;
+        overflow: hidden;
     }
     
     #rightmenu.viz {
         opacity: 1;
         visibility: visible;
         transition: all 0.3s ease-in-out;
+        overflow: hidden;
     }
     
     #rightmenu .menu {
@@ -1642,8 +1644,9 @@ footer .bot p a {
     }
     
     #rightmenu.viz .menu {
-        height: 50%;
+        height: 60%;
         transition: height 0.6s ease-in-out 0.4s;
+        overflow: hidden;
     }
     
     #rightmenu .menu .shadow {
@@ -1667,6 +1670,7 @@ footer .bot p a {
         background-color: #101010;
         width: 100%;
         transition: top 0.3s ease-in-out 0.2s;
+        overflow: hidden;
     }
     
     #rightmenu.viz .menu .content {
@@ -1678,8 +1682,7 @@ footer .bot p a {
         position: absolute;
         width: 100%;
         height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
+        overflow: hidden;
     }
     
 
@@ -1847,152 +1850,8 @@ footer .bot p a {
     .blog-posts {
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 1fr;
-    }
-
-
-    #rightmenu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 50;
-        background: rgba(36, 36, 36, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out 0.8s;
-    }
+    }    
     
-    #rightmenu.viz {
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    #rightmenu .menu {
-        position: absolute;
-        height: 0;
-        top: 0;
-        bottom: 50%;
-        width: 100%;
-        overflow: hidden;
-        transition: height 0.6s ease-in-out 0.3s;
-    }
-    
-    #rightmenu.viz .menu {
-        height: 50%;
-        transition: height 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .shadow {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #ba7dff;
-        top: -100%;
-        transition: top 0.6s ease-in-out 0.3s;
-    }
-    
-    #rightmenu.viz .menu .shadow {
-        top: 0;
-        transition: top 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .content {
-        position: absolute;
-        height: 100%;
-        top: -100%;
-        background-color: #101010;
-        width: 100%;
-        transition: top 0.3s ease-in-out 0.2s;
-    }
-    
-    #rightmenu.viz .menu .content {
-        top: 0;
-        transition: top 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .content .front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-
-    #rightmenu .menu .content .back {
-        position: absolute;
-        width: 116px;
-        border-right: solid 1px rgba(186, 125, 255, 0.5);
-        height: 100%;
-        left: 0;
-    }
-
-    
-    #rightmenu.viz {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.3s ease-in-out, visibility 0s;
-    }
-    
-    #rightmenu .menu {
-        position: absolute;
-        height: 0;
-        top: 0;
-        width: 100%;
-        overflow: hidden;
-        transition: height 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu {
-        height: 50%;
-    }
-    
-    #rightmenu .menu .shadow {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #ba7dff;
-        top: -100%;
-        transition: top 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu .shadow {
-        top: 0;
-    }
-    
-    #rightmenu .menu .content {
-        position: absolute;
-        height: 100%;
-        top: -100%;
-        background-color: #101010;
-        width: 100%;
-        transition: top 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu .content {
-        top: 0;
-    }
-    
-    #rightmenu .menu .content .front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    #rightmenu .menu .content .back {
-        position: absolute;
-        width: 116px;
-        border-right: solid 1px rgba(186, 125, 255, 0.5);
-        height: 100%;
-        left: 0;
-    }
-    
-    
-
     footer .top .end .logos {
         margin-left: 50px;
     }
@@ -2038,7 +1897,149 @@ footer .bot p a {
         width: 25%
     }
 
+    #rightmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background: rgba(36, 36, 36, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out 0.8s;
+        overflow: hidden;
+    }
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        bottom: 50%;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 60%;
+        transition: height 0.6s ease-in-out 0.4s;
+        overflow: hidden;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.3s ease-in-out 0.2s;
+        overflow: hidden;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+        transition: top 0.8s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
 
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 60%;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+    
     #rightmenu .menu .shadow {
         top: 0;
         left: 0;
