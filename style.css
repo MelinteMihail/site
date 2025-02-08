@@ -1113,7 +1113,6 @@ source {
 
 .blog-btn:hover {
     cursor: pointer;
-    background-color: black;
     color: #fff;
 }
 
@@ -1545,151 +1544,7 @@ footer .bot p a {
     .blog-posts {
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 1fr;
-    }
-
-
-    #rightmenu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 50;
-        background: rgba(36, 36, 36, 0.7);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease-in-out 0.8s;
-    }
-    
-    #rightmenu.viz {
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.3s ease-in-out;
-    }
-    
-    #rightmenu .menu {
-        position: absolute;
-        height: 0;
-        top: 0;
-        bottom: 50%;
-        width: 100%;
-        overflow: hidden;
-        transition: height 0.6s ease-in-out 0.3s;
-    }
-    
-    #rightmenu.viz .menu {
-        height: 50%;
-        transition: height 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .shadow {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #ba7dff;
-        top: -100%;
-        transition: top 0.6s ease-in-out 0.3s;
-    }
-    
-    #rightmenu.viz .menu .shadow {
-        top: 0;
-        transition: top 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .content {
-        position: absolute;
-        height: 100%;
-        top: -100%;
-        background-color: #101010;
-        width: 100%;
-        transition: top 0.3s ease-in-out 0.2s;
-    }
-    
-    #rightmenu.viz .menu .content {
-        top: 0;
-        transition: top 0.6s ease-in-out 0.4s;
-    }
-    
-    #rightmenu .menu .content .front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-
-    #rightmenu .menu .content .back {
-        position: absolute;
-        width: 116px;
-        border-right: solid 1px rgba(186, 125, 255, 0.5);
-        height: 100%;
-        left: 0;
-    }
-
-    
-    #rightmenu.viz {
-        opacity: 1;
-        visibility: visible;
-        transition: opacity 0.3s ease-in-out, visibility 0s;
-    }
-    
-    #rightmenu .menu {
-        position: absolute;
-        height: 0;
-        top: 0;
-        width: 100%;
-        overflow: hidden;
-        transition: height 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu {
-        height: 50%;
-    }
-    
-    #rightmenu .menu .shadow {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: #ba7dff;
-        top: -100%;
-        transition: top 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu .shadow {
-        top: 0;
-    }
-    
-    #rightmenu .menu .content {
-        position: absolute;
-        height: 100%;
-        top: -100%;
-        background-color: #101010;
-        width: 100%;
-        transition: top 0.6s ease-in-out;
-    }
-    
-    #rightmenu.viz .menu .content {
-        top: 0;
-    }
-    
-    #rightmenu .menu .content .front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
-    
-    #rightmenu .menu .content .back {
-        position: absolute;
-        width: 116px;
-        border-right: solid 1px rgba(186, 125, 255, 0.5);
-        height: 100%;
-        left: 0;
-    }
-    
-    
+    }    
 
     footer .top .end {
         display: flex;
@@ -1757,10 +1612,221 @@ footer .bot p a {
         height: 100%;
     }
 
+    #rightmenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        background: rgba(36, 36, 36, 0.7);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out 0.8s;
+    }
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        bottom: 50%;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+        transition: height 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.6s ease-in-out 0.3s;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+        transition: top 0.6s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.3s ease-in-out 0.2s;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+        transition: top 0.8s ease-in-out 0.4s;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+
+    
+    #rightmenu.viz {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s;
+    }
+    
+    #rightmenu .menu {
+        position: absolute;
+        height: 0;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu {
+        height: 50%;
+    }
+    
+    #rightmenu .menu .shadow {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #ba7dff;
+        top: -100%;
+        transition: top 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .shadow {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content {
+        position: absolute;
+        height: 100%;
+        top: -100%;
+        background-color: #101010;
+        width: 100%;
+        transition: top 0.8s ease-in-out;
+    }
+    
+    #rightmenu.viz .menu .content {
+        top: 0;
+    }
+    
+    #rightmenu .menu .content .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    #rightmenu .menu .content .back {
+        position: absolute;
+        width: 116px;
+        border-right: solid 1px rgba(186, 125, 255, 0.5);
+        height: 100%;
+        left: 0;
+    }
+    
+    #rightmenu .menu .shadow {
+        top: 0;
+        left: 0;
+    }
+
+    #rightmenu .menu .content {
+        top: 0;
+        left: 0;
+    }
+
+    #home .content .back {
+        background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url(images/main_bg2-compress.jpg);
+    }
+
+    #rightmenu .menu .content .front,
+    #rightmenu .menu .content .bot,
+    #rightmenu .menu .content .back {
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+    #rightmenu.viz .menu .content .front,
+    #rightmenu.viz .menu .content .bot,
+    #rightmenu.viz .menu .content .back {
+        opacity: 1;
+    }
+
+    #rightmenu.viz .menu .content .front {
+        transition: all 0.8s ease;
+    }
+
+    #rightmenu.viz .menu .content .bot {
+        transition: all 0.4s ease 0.8s;
+    }
+
+    #contact {
+        background: #fff;
+    }
+
+    #contact .details {
+        border: none;
+    }
 }
+
+
 /* Medium-sized phones and tablets*/
 @media only screen and (min-width: 601px) and (max-width: 768px) {
-        
+    #artinfo .menu {
+        width: 100%;
+    }
+    
+    #artinfo .menu .content article {
+        padding: 0;
+        padding-top: 80px;
+        padding-left: 25px;
+    }
+    
+    #artinfo.viz .menu .content > span {
+        width: 50px;
+    }
+
+    #artinfo .menu .content article h1 {
+        font-size: 32px;
+    }
+
+    #artinfo .menu .content article .team {
+        padding-left: 50px;
+    }
+
+    #artinfo .menu .content article .team li {
+        font-size: 1.35rem;
+        margin-right: 15px;
+    }
+
     .container .mid,
     .container .right {
         display: none !important;
@@ -1972,13 +2038,57 @@ footer .bot p a {
         width: 25%
     }
 
+
+    #rightmenu .menu .shadow {
+        top: 0;
+        left: 0;
+    }
+
+    #rightmenu .menu .content {
+        top: 0;
+        left: 0;
+    }
+
+    #home .content .back {
+        background-image: 
+                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url(images/main_bg2-compress.jpg);
+    }
+
+    #rightmenu .menu .content .front,
+    #rightmenu .menu .content .bot,
+    #rightmenu .menu .content .back {
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+    #rightmenu.viz .menu .content .front,
+    #rightmenu.viz .menu .content .bot,
+    #rightmenu.viz .menu .content .back {
+        opacity: 1;
+    }
+
+    #rightmenu.viz .menu .content .front {
+        transition: all 0.8s ease;
+    }
+
+    #rightmenu.viz .menu .content .bot {
+        transition: all 0.4s ease 0.8s;
+    }
+
+    #contact {
+        background: #fff;
+    }
+
+    #contact .details {
+        border: none;
+    }
+
     #contact,
     #contact .details {
         position: static;
         width: 100%;
         height: 100%;
     }
-    
 
 }
 
@@ -2012,11 +2122,21 @@ footer .bot p a {
 
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .blog-posts {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #numbers:before {
+        width: 25%;
+    }
 }
 
-@media only screen and (min-width: 1200px) and (max-width: 1399px)  {
+@media only screen and (min-width: 1201px) and (max-width: 1399px)  {
+    #numbers:before {
+        width: 25%;
+    }
+
     .blog-posts {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
