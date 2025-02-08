@@ -2130,6 +2130,10 @@ footer .bot p a {
     #numbers:before {
         width: 25%;
     }
+
+    #contact .details {
+        right: 10px;
+    }
 }
 
 @media only screen and (min-width: 1201px) and (max-width: 1399px)  {
@@ -2140,5 +2144,9 @@ footer .bot p a {
     .blog-posts {
         grid-template-rows: repeat(2, 1fr);
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #contact .details {
+        right: 10px;
     }
 }
