@@ -747,9 +747,6 @@ source {
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* background-image: 
-                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url(images/main_bg2.jpg); */ /* The gradient adds a layer on top of the background, so it creates a "dimming" effect */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -759,6 +756,28 @@ source {
     min-height: 100vh;
 }
 
+
+#home .content .back::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+
+#home .content .back .bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
 #home .content .main {
     width: 100%;
@@ -1769,12 +1788,6 @@ footer .bot p a {
         left: 0;
     }
 
-    /* #home .content .back {
-        background-image: 
-                    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                    url(images/main_bg2-compress.jpg);
-    } */
-
     #rightmenu .menu .content .front,
     #rightmenu .menu .content .bot,
     #rightmenu .menu .content .back {
@@ -2172,25 +2185,4 @@ footer .bot p a {
     #contact .details {
         right: 10px;
     }
-}
-
-.bg-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-.back::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 1;
 }
