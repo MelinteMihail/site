@@ -1557,6 +1557,10 @@ footer .bot p a {
     #home .content .main h1 {
         font-size: 32px;
     }
+
+    #rightmenu .menu .content .bot span {
+        font-size: 20px !important;
+    }
     
     .blog-posts {
         grid-template-rows: repeat(4, 1fr);
