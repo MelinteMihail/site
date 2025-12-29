@@ -170,3 +170,10 @@ footer .social.instagram:hover {
     color: #D2199A;
 }
 
+@media only screen and (max-width: 768px) {
+    main .gallery {
+        flex-direction: column;
+    }
+}
+
+
