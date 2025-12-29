@@ -64,6 +64,8 @@ main .main-text {
 main .gallery {
     margin-top: 3.5rem;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
