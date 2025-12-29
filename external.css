@@ -7,6 +7,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    background-color: #1A0213;
+}
+
 header {
     border-bottom: 1px solid rgba(85, 6, 66, 0.1);
     padding-bottom: 1rem;
@@ -27,15 +31,15 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-inline: 2.5rem;
-    margin-top: 1rem;
+    padding-inline: 2.5rem;
+    padding-top: 1rem;
+    color: #d1499f;
 }
 
 header nav .left .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #550642;
 }
 
 main {
@@ -48,14 +52,14 @@ main {
 main .title h1 {
     font-size: clamp(2rem, 4vw, 2.75rem);
     font-weight: 700;
-    color: #550642;
+    color: #8e1872;
     margin-bottom: 3rem;
     text-align: center;
 }
 
 
 main .main-text {
-    background: #f0e8f0;
+    background: #d1499f;
     padding: 1.5rem 3rem;
     border-radius: 16px;
     box-shadow: 0 20px 50px rgba(85, 6, 66, 0.08);
@@ -88,7 +92,7 @@ main .gallery figcaption {
     margin-top: 0.75rem;
     font-size: 1.1rem;
     font-weight: 500;
-    color: #550642;
+    color: #ea93c9;
 }
 
 
@@ -104,8 +108,6 @@ li {
 li::marker {
     color: #550642;
 }
-
-
 
 section.text {
     margin-top: 2.5rem;
@@ -123,12 +125,12 @@ section.text p {
 
 a {
     transition: color 0.2s ease;
-    color: #550642 !important;
+    color: #ea93c9 !important;
 }
 
 a:hover, a:active,
 main a:visited {
-    color: #D2199A !important;
+    color: #8E1872 !important;
 }
 
 footer {
@@ -140,6 +142,7 @@ footer {
     padding: 2.5rem;
     font-size: 1.25rem;
     gap: 1.5rem;
+    color: #ea93c9;
 }
 
 footer .icon {
@@ -153,7 +156,7 @@ footer .links {
 }
 
 footer .social {
-    color: #550642;
+    color: #8E1872;
     display: inline-flex;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -166,3 +169,4 @@ footer .social.tiktok:hover,
 footer .social.instagram:hover {
     color: #D2199A;
 }
+
