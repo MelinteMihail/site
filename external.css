@@ -181,3 +181,54 @@ footer .social.instagram:hover {
 }
 
 
+/* =========================
+   IMAGE MODAL (DESKTOP)
+   ========================= */
+
+.gallery img {
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* Modal overlay */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Enlarged image */
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 16px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Close button */
+.image-modal .close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 3rem;
+    color: #ea93c9;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mobile tweak */
+@media (max-width: 768px) {
+    .image-modal .close {
+        top: 15px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+}
